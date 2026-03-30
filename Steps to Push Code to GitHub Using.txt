@@ -1,0 +1,28 @@
+Steps to Push Code to GitHub Using Windows PowerShell
+1. Open Windows PowerShell
+Navigate to your project folder:
+cd "C:\path\to\your\project"
+
+2. Initialize Git Repository
+git init
+
+3. Add Files to Git
+git add .
+
+4. Commit Changes
+git commit -m "Initial commit"
+
+5. Create a Repository on GitHub
+Go to GitHub → New Repository
+Name it (e.g., coffee_project)
+Do NOT initialize with README (since local repo already exists)
+
+6. Add GitHub Remote
+git remote add origin https://github.com/YourUsername/coffee_project.git
+
+7. Push Code to GitHub
+git branch -M main
+git push -u origin main
+
+8. Verify
+Go to GitHub → Your repository → Confirm files are uploaded

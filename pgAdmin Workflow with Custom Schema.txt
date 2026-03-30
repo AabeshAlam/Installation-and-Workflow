@@ -1,0 +1,54 @@
+pgAdmin Workflow with Custom Schema (Notes)
+1. Open pgAdmin & Connect to Server
+
+2. Create Database
+CREATE DATABASE coffee_db;
+
+3. Connect to Database
+Right-click coffee_db → Query Tool
+
+4. Create Schema
+CREATE SCHEMA coffee_schema;
+
+5. Create Table inside Schema
+CREATE TABLE coffee_schema.coffee_sales (
+    date DATE,
+    coffee_name TEXT,
+    money NUMERIC,
+    cash_type TEXT
+);
+
+6. Import CSV (Important)
+Right-click:
+coffee_db → Schemas → coffee_schema → Tables → coffee_sales
+Click Import/Export
+Filename → select coffee_sales.csv
+Format → CSV
+Header → YES
+Click OK
+
+7. SQL Queries
+View Data
+SELECT * FROM coffee_schema.coffee_sales;
+
+Total Sales
+SELECT SUM(money) AS total_sales 
+FROM coffee_schema.coffee_sales;
+
+Sales by Coffee
+SELECT coffee_name, SUM(money) AS total
+FROM coffee_schema.coffee_sales
+GROUP BY coffee_name
+ORDER BY total DESC;
+
+Daily Sales
+SELECT date, SUM(money) AS total
+FROM coffee_schema.coffee_sales
+GROUP BY date
+ORDER BY date;
+
+Most Sold Coffee
+SELECT coffee_name, COUNT(*) AS sold
+FROM coffee_schema.coffee_sales
+GROUP BY coffee_name
+ORDER BY sold DESC;

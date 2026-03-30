@@ -1,0 +1,41 @@
+VS Code Installation & Workflow (Notes)
+1. Open VS Code Terminal
+Shortcut: Ctrl + ~
+
+2. Check Python Version
+python --version
+
+3. Create Virtual Environment
+python -m venv venv
+
+4. Activate Virtual Environment (Command Prompt)
+venv\Scripts\activate
+
+5. Create File: requirements.txt
+Add:
+numpy
+pandas
+matplotlib
+seaborn
+openpyxl
+
+6. Install Libraries
+pip install -r requirements.txt
+
+7. Select Python Interpreter
+Go to: Kernel / Python: Select Interpreter
+Select: venv (⭐ recommended)
+
+8. Python Code
+Import Libraries
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+9. Dataset
+df = pd.read_csv("data/coffee_sales.csv")
+
+10. Check
+df.head() or df.tail()
+
