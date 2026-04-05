@@ -16,8 +16,9 @@ Add:
 numpy
 pandas
 matplotlib
-seaborn
+seaborn==0.13.2
 openpyxl
+scipy
 
 6. Install Libraries
 pip install -r requirements.txt
